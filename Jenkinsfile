@@ -39,11 +39,11 @@ pipeline {
         }
    stage('Deploy') {
       steps {
-        withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
-          sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml package deploy -DmuleDeploy -Dtestfile=runner.TestRunner.java -Danypoint.username=joji4 -Danypoint.password=Canadavisa25@ -DapplicationName=apiops-anypoint-jenkins-joji -Dcloudhub.region=us-east-2'
+        //withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
+          sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean package deploy -DmuleDeploy -Dtestfile=runner.TestRunner.java -Danypoint.username=joji4 -Danypoint.password=Canadavisa25@ -DapplicationName=apiops-anypoint-jenkins-joji -Dcloudhub.region=us-east-2'
         }
 
-      }
+     // }
     }
     stage('GenerateReports') {
       steps {
