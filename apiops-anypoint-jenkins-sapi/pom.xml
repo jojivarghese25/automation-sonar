@@ -33,9 +33,10 @@
          				<password>${password}</password>         
          				<workers>1</workers>
          				<workerType>Micro</workerType>
-         				<environment>${environment}</environment>
+         				<environment>Sandbox</environment>
          				<muleVersion>4.3.0</muleVersion>
          				<applicationName>${applicationName}</applicationName>
+         				<region>${cloudhub.region}</region>
          				<objectStoreV2>true</objectStoreV2>
       				</cloudHubDeployment>
    				<classifier>mule-application</classifier>
