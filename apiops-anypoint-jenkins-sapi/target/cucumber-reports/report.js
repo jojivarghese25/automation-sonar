@@ -44,7 +44,7 @@ formatter.match({
   "location": "CustomerStepDefinition.createNewRequest(String)"
 });
 formatter.result({
-  "duration": 74145200,
+  "duration": 74479800,
   "status": "passed"
 });
 formatter.match({
@@ -57,7 +57,7 @@ formatter.match({
   "location": "CustomerStepDefinition.addEndpoint(String)"
 });
 formatter.result({
-  "duration": 58900,
+  "duration": 85400,
   "status": "passed"
 });
 formatter.match({
@@ -70,7 +70,7 @@ formatter.match({
   "location": "CustomerStepDefinition.sendRequest(String)"
 });
 formatter.result({
-  "duration": 3349827400,
+  "duration": 3414392800,
   "status": "passed"
 });
 formatter.match({
@@ -83,7 +83,7 @@ formatter.match({
   "location": "CustomerStepDefinition.responseCodeValidation(int)"
 });
 formatter.result({
-  "duration": 26857500,
+  "duration": 24265300,
   "status": "passed"
 });
 formatter.scenario({
@@ -139,7 +139,7 @@ formatter.match({
   "location": "CustomerStepDefinition.createNewRequest(String)"
 });
 formatter.result({
-  "duration": 32300,
+  "duration": 47000,
   "status": "passed"
 });
 formatter.match({
@@ -152,7 +152,7 @@ formatter.match({
   "location": "CustomerStepDefinition.addEndpoint(String)"
 });
 formatter.result({
-  "duration": 26200,
+  "duration": 26000,
   "status": "passed"
 });
 formatter.match({
@@ -165,7 +165,7 @@ formatter.match({
   "location": "CustomerStepDefinition.setContentType(String)"
 });
 formatter.result({
-  "duration": 27600,
+  "duration": 33700,
   "status": "passed"
 });
 formatter.match({
@@ -178,7 +178,7 @@ formatter.match({
   "location": "CustomerStepDefinition.setRequestBody(String)"
 });
 formatter.result({
-  "duration": 146517400,
+  "duration": 123644500,
   "status": "passed"
 });
 formatter.match({
@@ -191,7 +191,7 @@ formatter.match({
   "location": "CustomerStepDefinition.sendRequest(String)"
 });
 formatter.result({
-  "duration": 1567713900,
+  "duration": 1347027300,
   "status": "passed"
 });
 formatter.match({
@@ -204,7 +204,7 @@ formatter.match({
   "location": "CustomerStepDefinition.responseCodeValidation(int)"
 });
 formatter.result({
-  "duration": 1362500,
+  "duration": 454800,
   "status": "passed"
 });
 formatter.match({
@@ -217,7 +217,7 @@ formatter.match({
   "location": "CustomerStepDefinition.responseAttributeValidation(String)"
 });
 formatter.result({
-  "duration": 403657300,
+  "duration": 368691400,
   "status": "passed"
 });
 });
