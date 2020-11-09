@@ -37,14 +37,14 @@ pipeline {
                 }
             }
         }
-   stage('Deploy') {
+  /* stage('Deploy') {
       steps {
         //withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
           sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean package deploy -DmuleDeploy -Dtestfile=runner.TestRunner.java -Danypoint.username=joji4 -Danypoint.password=Canadavisa25@ -DapplicationName=apiops-anypoint-jenkins-joji -Dcloudhub.region=us-east-2'
         }
 
      // }
-    }
+    }*/
     stage('GenerateReports') {
       steps {
         cucumber(failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: 'cucumber.json', jsonReportDirectory: 'apiops-anypoint-jenkins-sapi/target', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1)
