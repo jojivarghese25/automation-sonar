@@ -45,6 +45,15 @@ pipeline {
 
      // }
     }*/
+    stage('FunctionalTesting') {
+      steps {
+        
+        withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
+          bat 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test'
+        }
+
+      }
+    }
     stage('GenerateReports') {
       steps {
         cucumber(failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: 'cucumber.json', jsonReportDirectory: 'apiops-anypoint-jenkins-sapi/target', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1)
