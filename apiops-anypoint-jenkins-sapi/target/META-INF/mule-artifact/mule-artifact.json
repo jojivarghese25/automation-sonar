@@ -1,0 +1,35 @@
+{
+  "configs": [
+    "apios-anypoint-jenkins-sapi-implementation.xml",
+    "apios-anypoint-jenkins-global.xml",
+    "apios-anypoint-jenkins-sapi.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:apiops-anypoint-jenkins-sapi:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.3.0-20200824",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/apios-anypoint-bdd-sapi.raml",
+        "api/resource/dataType/subscriptiondataType.raml",
+        "api/resource/dataType/userdataType.raml",
+        "api/resource/example/subscription-arr-example.raml",
+        "api/resource/example/user-example.raml",
+        "api/resource/traits/errortrait.raml",
+        "apios-anypoint-jenkins-global.xml",
+        "apios-anypoint-jenkins-sapi-implementation.xml",
+        "apios-anypoint-jenkins-sapi.xml",
+        "apios-jenkins-dev.config.yaml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
