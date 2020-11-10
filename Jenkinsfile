@@ -1,19 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
-        sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean install -Dtestfile=runner.TestRunner.java -DskipTests'
-      }
-    }
-    }
-    stage('Munit') {
-      steps {
-        sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test'
-      }
-    }
-    /* stage('SonarQube'){
+    stage('SonarQube'){
             steps {
                 withSonarQubeEnv('SonarQube') {
                    sh "mvn -f apiops-anypoint-jenkins-sapi/pom.xml sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.sources=src/main/"
@@ -36,7 +24,20 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
+    stage('Build') {
+      steps {
+        withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
+        sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean install -Dtestfile=runner.TestRunner.java -DskipTests'
+      }
+    }
+    }
+    stage('Munit') {
+      steps {
+        sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test'
+      }
+    }
+    
    stage('Deploy') {
       steps {
         //withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
