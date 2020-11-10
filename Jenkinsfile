@@ -49,7 +49,7 @@ pipeline {
       steps {
         
         withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
-          sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test -Dtestfile=runner.TestRunner'
+          sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test -Dtestfile=/src/test/java/runner.TestRunner.java'
         }
 
       }
