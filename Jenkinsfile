@@ -13,7 +13,7 @@ pipeline {
         sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test'
       }
     }
-     stage('SonarQube'){
+    /* stage('SonarQube'){
             steps {
                 withSonarQubeEnv('SonarQube') {
                    sh "mvn -f apiops-anypoint-jenkins-sapi/pom.xml sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.sources=src/main/"
@@ -36,15 +36,15 @@ pipeline {
                     }
                 }
             }
-        }
-  /* stage('Deploy') {
+        }*/
+   stage('Deploy') {
       steps {
         //withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
           sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean package deploy -DmuleDeploy -Dtestfile=runner.TestRunner.java -Danypoint.username=joji4 -Danypoint.password=Canadavisa25@ -DapplicationName=apiops-anypoint-jenkins-joji -Dcloudhub.region=us-east-2'
         }
 
      // }
-    }*/
+    }
     stage('FunctionalTesting') {
       steps {
         
