@@ -1,6 +1,13 @@
 pipeline {
   agent any
   stages {
+    stage('Build') {
+      steps {
+        withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
+        sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean install -Dtestfile=runner.TestRunner.java -DskipTests'
+      }
+    }
+    }
     stage('SonarQube'){
             steps {
                 withSonarQubeEnv('SonarQube') {
@@ -25,13 +32,7 @@ pipeline {
                 }
             }
         }
-    stage('Build') {
-      steps {
-        withEnv(overrides: ["JAVA_HOME=${ tool 'JDK 8' }", "PATH+MAVEN=${tool 'Maven'}/bin:${env.JAVA_HOME}/bin"]) {
-        sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml clean install -Dtestfile=runner.TestRunner.java -DskipTests'
-      }
-    }
-    }
+    
     stage('Munit') {
       steps {
         sh 'mvn -f apiops-anypoint-jenkins-sapi/pom.xml test'
